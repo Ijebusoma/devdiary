@@ -20,5 +20,6 @@ Auth::routes();
 //Route::get('/login', 'HomeController@showlogin');
 Route::get('/home', 'HomeController@showlogin');
 Route::get('/dashboard', 'HomeController@index');
+Route::get('/profile', 'HomeController@showProfile')->name('profile');
 
 //Route::post('/home/{user}', 'HomeController@index')->name('login');
