@@ -33,17 +33,19 @@
   			<div class="w3ls-signup-right">
   				<div class="login-agileits-top">
   					<form action="{{ route('login') }}" method="post">
-                {{ csrf_field() }}
+
   						<p>Email</p>
 
   						<input type="email" id="email" class="name" name="email" required autofocus="">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
               @if ($errors->has('email'))
                   <span class="help-block">
                       <strong>{{ $errors->first('email') }}</strong>
                   </span>
               @endif
+
   						<p>Password</p>
-  						<input type="password"id="password" class="password" name="password" required autofocus="">
+  						<input type="password" id="password" class="password" name="password" required autofocus="">
 
   						<input type="submit" value="Sign In">
   					</form>

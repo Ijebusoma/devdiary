@@ -24,7 +24,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $req)
+    public function show()
     {
 
     $user = Auth::user();
@@ -32,19 +32,59 @@ class HomeController extends Controller
      $record = $user->diary;
 
 
-      return view('home')->with(['record'=>$record, 'user'=>$user]);
+      return view('home')->with(['record'=>$record]);
 
     }
-    public function showlogin()
+
+
+    public function save(Request $request)
+
     {
 
-   return view('auth.login');
+$user = Auth::user();
+$error = $request->error;
+$fix = $request->fix;
+$diary = new Diary();
+$diary->error = $error;
+$diary->fix = $fix;
+$diary->user_id = Auth::id();
+$diary->save();
+
+//$result = $diary->save();
+
+/**
+if($result==true)
+{
+    return "saved";
+}else{
+    return "not saved";
+}
+//Diary::create($input);
+
+
+//return "Inserted";
+ /**
+$diary = new Diary();
+$diary->error = $error;
+$diary->fix = $fix;
+$diary->save();
+  **/
 
     }
-    public function showProfile()
+    public function edit($id)
     {
-        return view('profile');
+$diary = new Diary;
+$record = $diary->find($id);
+return view('layouts.edit', compact('record'));
+
+//eturn view('layouts.edit', compact('record'));
+
     }
+
+   public function update($id)
+   {
+
+   }
 
 
 }

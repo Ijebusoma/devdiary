@@ -18,8 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 //Route::get('/login', 'HomeController@showlogin');
+Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/home', 'HomeController@showlogin');
-Route::get('/dashboard', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@show');
 Route::get('/profile', 'HomeController@showProfile')->name('profile');
+Route::post('/create', 'HomeController@save');
+Route::get('/edit/{id}', 'HomeController@edit');
+Route::get('/crud', function()
+{
+    return view('crud');
+});
+
 
 //Route::post('/home/{user}', 'HomeController@index')->name('login');

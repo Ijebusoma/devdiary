@@ -10,6 +10,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+        <script type="text/javascript" src="{{URL::asset('assets/js/ball.js')}}"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -66,7 +68,20 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            #mycanvas {
+                position: absolute;
+                margin: auto;
+                width: 312px;
+                height: 312px;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
         </style>
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -83,7 +98,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    DevDIARY
+                    <canvas id="mycanvas"></canvas>
+                    DEVDIARY
                 </div>
 
                 <div class="links">
