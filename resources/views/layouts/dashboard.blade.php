@@ -764,7 +764,7 @@
                                     <button id="export-btn" class="btn btn-primary"><a href ="/edit/{{$records->id}}">Edit</a><button>
                                 </td>
                                 <td>
-                                    <button id="export-btn" class="btn btn-primary">Delete</button>
+                                    <button id="export-btn" class="btn btn-primary"><a href="/delete/{{$records->id}}">Delete</button>
                                 </td>
                                 <td>
                                     <span class="table-up glyphicon glyphicon-arrow-up"></span>

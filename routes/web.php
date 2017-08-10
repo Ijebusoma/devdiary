@@ -24,6 +24,9 @@ Route::get('/dashboard', 'HomeController@show');
 Route::get('/profile', 'HomeController@showProfile')->name('profile');
 Route::post('/create', 'HomeController@save');
 Route::get('/edit/{id}', 'HomeController@edit');
+Route::get('/delete/{id}', 'HomeController@delete');
+Route::patch('/update/{id}', 'HomeController@update');
+
 Route::get('/crud', function()
 {
     return view('crud');
