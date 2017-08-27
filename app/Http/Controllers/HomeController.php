@@ -31,10 +31,11 @@ class HomeController extends Controller
 
     $user = Auth::user();
 
-     $record = $user->diary;
+     //$record = $user->diary;
 
 
-      return view('home')->with(['record'=>$record]);
+      //return view('home')->with(['record'=>$record]);
+        return view('user.dashboard')->with(['user'=>$user]);
 
     }
     public function showlogin()
@@ -43,6 +44,11 @@ class HomeController extends Controller
         return view('auth.login');
 
 
+    }
+    public function AddBoard()
+    {
+
+        //return a view for users to fill the board name
     }
 
 
